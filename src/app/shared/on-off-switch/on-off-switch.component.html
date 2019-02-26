@@ -1,0 +1,7 @@
+
+<p id="label">{{switchLabel}}</p>
+<div class="switch_container" [ngClass]="{ on: state === true, invalid: state !== true && state !== false }">
+  <div id="on" class="switch_label"><span>{{onLabel}}</span></div>
+  <div id="off" class="switch_label"><span>{{offLabel}}</span></div>
+  <div id="switch"></div>
+</div>

@@ -1,0 +1,8 @@
+<div class="menu">
+    <ng-container *ngFor="let item of menuItems">
+        <a class="link" [ngClass]="{ active: route.indexOf(item.route) === 0 }" (click)="item.nav()" *ngIf="item.restrict ? item.restrict() : true">
+            <span>{{item.label}}</span>
+        </a>
+    </ng-container>
+</div>
+<div class="close_fader" (click)="toggleMenu()"></div>

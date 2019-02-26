@@ -1,0 +1,15 @@
+<p *ngIf="!!label" class="label">{{label}}</p>
+<div class="fields" [ngClass]="{ 'dictionary': dictionary }">
+    <div class="field" *ngFor="let value of getValues()">
+        <input *ngIf="dictionary" [(ngModel)]="value.key" placeholder="{{keyPlaceholder || 'Key'}}" type="text" />
+        <input [(ngModel)]="value.value" placeholder="{{valuePlaceholder || 'Value'}}" type="text" />
+    </div>
+</div>
+<div class="add_remove_control">
+    <div class="add" (click)="addField()">
+        <i class="fas fa-plus"></i>
+    </div>
+    <div class="remove" (click)="removeField()">
+        <i class="fas fa-minus"></i>
+    </div>
+</div>

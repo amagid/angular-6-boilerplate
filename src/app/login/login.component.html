@@ -1,0 +1,8 @@
+<div class="login_box" [ngClass]="{ visible: loaded }">
+    <form>
+        <h3 id="title">Sign In</h3>
+        <input-field #username [placeholder]="'Username'" [validators]="validators.username" [(overrideMessage)]="overrideMessages.username" [type]="'text'"></input-field>
+        <input-field #password [placeholder]="'Password'" [validators]="validators.password" [(overrideMessage)]="overrideMessages.password" [type]="'password'"></input-field>
+        <button type="submit" class="button blue" id="login_button" (click)="login(username.getValue(), password.getValue())">Submit</button>
+    </form>
+</div>

@@ -1,0 +1,34 @@
+@import 'src/theme/theme-variables';
+
+:host {
+    display: block;
+    position: relative;
+    overflow: visible;
+    z-index: -1;
+    div {
+        position: relative;
+        border: 1px solid $red;
+        background-color: $light-red;
+        color: $red;
+        opacity: 0;
+        transform: translateY(-110%);
+        padding: 2px 4px;
+        margin: 0 auto;
+        width: calc(100% - 10px);
+        border-top: none;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        text-align: center;
+        font-family: "PT Sans", Arial, Helvetica, sans-serif;
+        font-weight: normal;
+        font-size: 12px;
+        transition: transform 0.2s ease, opacity 0.2s ease, height 0.2s ease;
+        min-height: 23px;
+        white-space: pre-line;
+        &.active {
+            top: 0;
+            opacity: 1;
+            transform: translateY(0%);
+        }
+    }
+}

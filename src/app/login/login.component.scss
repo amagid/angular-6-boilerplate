@@ -1,0 +1,40 @@
+@import "src/theme/theme-variables";
+@import "~bootstrap/scss/mixins/_breakpoints";
+:host {
+  height: 100vh;
+  display: block;
+  .login_box {
+    background-color: white;
+    width: calc(100% - 40px);
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    display: block;
+    border-radius: 10px;
+    border: 1px solid #AAA;
+    box-shadow: 5px 5px 10px -4px rgba(0, 0, 0, 1);
+    position: relative;
+    top: calc(50% - 100px);
+    transform: translateY(-50%);
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.4s ease, top 0.4s ease;
+    &.visible {
+      top: 50%;
+      opacity: 1;
+    }
+    #title {
+      color: $gray-800;
+      font-family: "PT Sans", Arial, Helvetica, sans-serif;
+      font-weight: 600;
+    }
+    #login_button {
+      float: right;
+    }
+  }
+  @include media-breakpoint-down(xs) {
+    .container {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+@import 'src/theme/theme-variables';
+
+:host {
+    position: fixed;
+    display: block;
+    clear: both;
+    z-index: 100000;
+    height: 200%;
+    width: 100vw;
+    top: -50%;
+    left: 0;
+    bottom: -50%;
+    right: 0;
+    overflow: auto;
+    pointer-events: none;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    transition: opacity 0.4s ease;
+    &.active {
+        pointer-events: all;
+        opacity: 1;
+    }
+    > * {
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: calc(50% + 5vw);
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        pointer-events: none;
+        transition: left 0.4s ease, opacity 0.4s ease;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8);
+        &.active {
+            left: 50%;
+            pointer-events: all;
+            opacity: 1;
+        }
+        &#success {
+            box-shadow: 0 0 10px 0 $green;
+        }
+        &#failure {
+            box-shadow: 0 0 10px 0 $red;
+        }
+    }
+}

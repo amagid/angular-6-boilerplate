@@ -1,0 +1,105 @@
+@import "src/theme/theme-variables";
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $header-height;
+  background-color: white;
+  box-shadow: 0 0 10px 0 #444;
+  z-index: 1000;
+  .logo_container {
+    height: 100%;
+    float: left;
+    margin-right: 20px;
+    padding: 20px;
+    cursor: pointer;
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+  .links {
+    float: right;
+    height: 100%;
+  }
+  .links .link {
+    display: block;
+    height: 100%;
+    position: relative;
+    float: left;
+    padding: 0 20px;
+    color: #333;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    text-decoration: none;
+    border-bottom: 5px solid white;
+    border-top: 5px solid transparent;
+    transition: border-color 0.2s ease;
+    cursor: pointer;
+  }
+  .links .link:last-child {
+    padding-right: 40px;
+  }
+  .links .link span {
+    position: relative;
+    display: block;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .links .link.selected,
+  .links .link:hover {
+    border-bottom-color: #00467f;
+    color: #00467f;
+  }
+  .menu_button {
+    float: right;
+    border: 1px solid $gray-300;
+    font-size: 20px;
+    color: $gray-600;
+    cursor: pointer;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 25px;
+    border-radius: 5px;
+    height: 35px;
+    width: 35px;
+    i.open {
+      position: absolute;
+      top: calc(50% + 0.5px);
+      left: calc(50% + 0.5px);
+      transform: translate(-50%, -50%);
+      transition: color 0.2s ease;
+      color: transparent;
+      pointer-events: none;
+      &.active {
+        color: $gray-600;
+        pointer-events: all;
+      }
+    }
+    i.close_button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: color 0.2s ease;
+      color: transparent;
+      pointer-events: none;
+      &.active {
+        color: $gray-600;
+        pointer-events: all;
+      }
+    }
+  }
+}
+
+.header_spacer {
+  height: $header-height;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  clear: both;
+  flex: none;
+}

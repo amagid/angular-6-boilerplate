@@ -1,0 +1,19 @@
+<header class="header">
+    <div class="logo_container" (click)="goToDashboard()">
+        <img src="assets/logo.png" />
+    </div>
+    <div class="links desktop_only">
+        <ng-container *ngFor="let item of menuItems">
+            <a class="link" (click)="item.nav()" *ngIf="item.restrict ? item.restrict() : true">
+                <span>{{item.label}}</span>
+            </a>
+        </ng-container>
+    </div>
+    <div class="menu_button mobile_only">
+        <i class="open fa fa-bars" (click)="toggleMenu()" [ngClass]="{active: !menuActive }"></i>
+        <i class="close_button fa fa-times" (click)="toggleMenu()" [ngClass]="{active: menuActive }"></i>
+    </div>
+    <mobile-menu [menuItems]="menuItems" [(menuActive)]="menuActive"></mobile-menu>
+</header>
+
+<div class="header_spacer"></div>

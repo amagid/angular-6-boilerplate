@@ -1,0 +1,19 @@
+@import 'src/theme/theme-variables';
+
+:host {
+    padding: 20px;
+    width: calc(100% - 20px);
+    max-width: 500px;
+    max-height: 630px;
+    overflow: hidden;
+    background-color: white;
+    text-align: center;
+    #title {
+      color: $green;
+      font-weight: 600;
+    }
+    #content {
+        color: $gray-700;
+        margin: 0;
+    }
+}

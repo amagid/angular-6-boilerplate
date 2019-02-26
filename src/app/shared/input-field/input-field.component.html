@@ -1,0 +1,4 @@
+<p *ngIf="!!label" class="label">{{label}}</p>
+<input *ngIf="type !== 'textarea'" [(ngModel)]="inputValue" placeholder="{{placeholder}}" (change)="change()" (keydown)="clearErrorState()" type="{{type}}" [ngClass]="{ error: errorState || !!overrideMessage }" />
+<textarea *ngIf="type === 'textarea'" [(ngModel)]="inputValue" placeholder="{{placeholder}}" (change)="change()" (keydown)="clearErrorState()" rows="{{rows || 4}}" [ngClass]="{ error: errorState || !!overrideMessage }"></textarea>
+<error-box [content]="overrideMessage || errors" [active]="errorState || !!overrideMessage"></error-box>

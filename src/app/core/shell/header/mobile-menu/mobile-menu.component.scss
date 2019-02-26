@@ -1,0 +1,66 @@
+@import 'src/theme/theme-variables.scss';
+:host {
+    position: absolute;
+    left: 0;
+    top: $header-height;
+    height: calc(100vh - #{$header-height});
+    width: 100vw;
+    pointer-events: none;
+    overflow: hidden;
+    display: block;
+    .menu {
+        z-index: 1;
+        position: absolute;
+        left: -100%;
+        top: 0;
+        width: 200px;
+        height: 100%;
+        background-color: $gray-500;
+        overflow-y: auto;
+        overflow-x: visible;
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.7);
+        transition: left 0.4s ease;
+        .link {
+            display: block;
+            width: 100%;
+            padding: 10px 20px;
+            color: #333;
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 0px;
+            text-decoration: none;
+            border-left: 0px solid $blue;
+            transition: border-left-width 0.2s ease;
+            text-align: center;
+            border-top: 1px solid $gray-300;
+            background-color: white;
+            cursor: pointer;
+            &.selected,
+            &:hover,
+            &.active {
+                border-left-width: 20px;
+                color: $blue;
+            }
+        }
+    }
+    .close_fader {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        cursor: default;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+    &.active {
+        pointer-events: all;
+        .menu {
+            left: 0;
+        }
+        .close_fader {
+            opacity: 1;
+        }
+    }
+}
