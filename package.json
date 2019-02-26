@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "ng": "ng",
-    "build": "npm run env -s && ng build --source-map=false",
+    "build": "npm run env -s && ng build --source-map=true",
     "start": "npm run env -s && ng serve --aot --proxy-config proxy.conf.js --host=0.0.0.0 --disable-host-check",
     "serve:sw": "npm run build -s && npx http-server ./dist -p 3000",
     "lint": "ng lint && stylelint \"src/**/*.scss\" --syntax scss && htmlhint \"src\" --config .htmlhintrc",
