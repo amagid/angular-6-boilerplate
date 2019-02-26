@@ -1,0 +1,62 @@
+@import '~@ng-select/ng-select/themes/default.theme.css';
+
+/*
+ * Global application theme.
+ * Framework overrides and customization goes here.
+ */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $dark-blue;
+    font-family: "Contrail One", Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    @media (max-width: 768px) {
+        overflow: auto;
+    }
+}
+
+.button {
+    border-radius: 5px;
+    padding: 10px;
+    font-family: "PT Sans", Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 80%;
+    cursor: pointer;
+    border: none;
+    &.blue {
+        background-color: $blue;
+        color: white;
+    }
+    &.red {
+        background-color: $red;
+        color: white;
+    }
+}
+
+ng-select.customized {
+    text-transform: capitalize;
+    .ng-value {
+        width: 100%;
+        text-align: center;
+    }
+    .ng-input, .ng-clear-wrapper {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) {
+    .mobile_only {
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .desktop_only {
+        display: none !important;
+    }
+}
