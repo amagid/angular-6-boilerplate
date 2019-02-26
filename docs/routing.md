@@ -2,8 +2,8 @@
 
 To allow navigation without triggering a server request, Angular now use by default the
 [HTML5 pushState](https://developer.mozilla.org/en-US/docs/Web/API/History_API#Adding_and_modifying_history_entries)
-API enabling natural URL style (like `12.2.184.98:3000/home/`), in opposition to Angular 1 which used the *hashbang* hack
-routing style (like `12.2.184.98:3000/#/home/`). 
+API enabling natural URL style (like `localhost:3000/home/`), in opposition to Angular 1 which used the *hashbang* hack
+routing style (like `localhost:3000/#/home/`). 
 
 This change has several consequences you should know of, be sure to read the 
 [browser URL styles](https://angular.io/docs/ts/latest/guide/router.html#!#browser-url-styles) notice to fully
