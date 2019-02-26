@@ -92,6 +92,18 @@ export class AuthenticationService implements OnDestroy {
    * @return {boolean} True if the user is authenticated.
    */
   isAuthenticated(checkWithServer: boolean = false): Observable<boolean> {
+
+
+
+    //===== DISABLING AUTH FOR BOILERPLATE ====//
+    console.error("===== AUTH DISABLED IN src/app/core/authentication/authentication.service.ts LINE 98-103!!! =====");
+    const tru = true;
+    if (tru) {
+      return of(true);
+    }
+
+
+
     if (checkWithServer) {
       return this.httpClient
         .post('/auth/verify-jwt', {})

@@ -37,6 +37,18 @@ export class AuthenticationGuard implements CanActivate {
   _isAuthenticated(): Observable<boolean> {
     return this.authenticationService.isAuthenticated()
       .pipe(map((authenticated: boolean) => {
+
+
+
+        //===== DISABLING AUTH FOR BOILERPLATE ====//
+        console.error("===== AUTH DISABLED IN src/app/core/authentication/authentication.guard.ts LINE 43-48!!! =====");
+        const tru = true;
+        if (tru) {
+          return true;
+        }
+
+
+
         if (!authenticated) {
           log.debug('Not authenticated, redirecting...');
           this.router.navigate(['/login']);
