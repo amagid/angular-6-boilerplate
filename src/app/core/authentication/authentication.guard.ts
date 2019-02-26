@@ -19,6 +19,18 @@ export class AuthenticationGuard implements CanActivate {
     const minPermissions = route && route.data && route.data.minPermissions;
     return this._isAuthenticated()
       .pipe(map((authenticated: boolean) => {
+
+
+
+        //===== DISABLING AUTH FOR BOILERPLATE ====//
+        console.error("===== AUTH DISABLED IN src/app/core/authentication/authentication.guard.ts LINE 25-30!!! =====");
+        const tru = true;
+        if (tru) {
+          return true;
+        }
+
+
+
         if (authenticated && this.authenticationService.isUserPermissionSufficient(minPermissions)) {
           return true;
         }
@@ -41,7 +53,7 @@ export class AuthenticationGuard implements CanActivate {
 
 
         //===== DISABLING AUTH FOR BOILERPLATE ====//
-        console.error("===== AUTH DISABLED IN src/app/core/authentication/authentication.guard.ts LINE 43-48!!! =====");
+        console.error("===== AUTH DISABLED IN src/app/core/authentication/authentication.guard.ts LINE 55-60!!! =====");
         const tru = true;
         if (tru) {
           return true;

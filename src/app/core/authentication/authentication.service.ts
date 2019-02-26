@@ -118,6 +118,21 @@ export class AuthenticationService implements OnDestroy {
   }
 
   isUserPermissionSufficient(minPermissions: string | null): boolean {
+
+    
+
+
+
+    //===== DISABLING AUTH FOR BOILERPLATE ====//
+    console.error("===== AUTH DISABLED IN src/app/core/authentication/authentication.service.ts LINE 126-131!!! =====");
+    const tru = true;
+    if (tru) {
+      return true;
+    }
+
+
+
+
     if (!minPermissions || minPermissions === 'any') {
       return true;
     } else if (minPermissions === 'viewer') {

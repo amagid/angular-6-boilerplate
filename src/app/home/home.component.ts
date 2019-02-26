@@ -18,17 +18,22 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   notifyOnDestroy: Subject<null> = new Subject<null>();
   panels: Observable<Array<Panel>>;
+  panelList: any[] = [];
 
   constructor(private router: Router, private panelService: PanelService, private modalService: ModalService, private httpErrorService: HttpErrorService, private authService: AuthenticationService) { }
 
   ngOnInit() {
     this.panels = this.panelService.myPanels.get();
-    this.panelService.myPanels.subscribe(this.notifyOnDestroy, ()=>{}, this.retrievalError);
+    this.panelService.myPanels.subscribe(this.notifyOnDestroy, this.displayPanels, this.retrievalError);
   }
 
   ngOnDestroy() {
     this.notifyOnDestroy.next();
     this.notifyOnDestroy.complete();
+  }
+
+  displayPanels = (panels: any[]) => {
+    this.panelList = panels;
   }
 
   retrievalError = (error: any) => {
