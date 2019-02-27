@@ -6,6 +6,7 @@ import { SharedModule } from '@app/shared';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { PanelService } from '../../services/panel/panel.service';
+import { PanelComponent } from './panel/panel.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { PanelService } from '../../services/panel/panel.service';
     HomeRoutingModule
   ],
   declarations: [
-    HomeComponent
+    HomeComponent,
+    PanelComponent
   ],
   exports: [
 
